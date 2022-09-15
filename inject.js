@@ -26,33 +26,17 @@ function setDisplayStyleUsingElementsByClass(className, styleValue) {
 }
 
 // Variables to control
-var blockComments = 'none';
-var leftSidebar = 'none';
 var recommendation = 'none';
 var homeFeed = 'none';
 
-chrome.storage.sync.get(['block_comments', 'left_side_bar', 'recommendations', 'home_feed'], function (obj) {
-    blockComments = obj.block_comments = undefined ? blockComments : obj.block_comments;
-    leftSidebar = obj.left_side_bar == undefined ? leftSidebar : obj.left_side_bar;
-    recommendation = obj.recommendations == undefined ? recommendation : obj.recommendations;
-    homeFeed = obj.home_feed == undefined ? homeFeed : obj.home_feed;
-});
 
 function removeYoutubeElements() {
 
-    //Comments section
-    setDisplayStyleUsingElementById("comments", blockComments);
-
     //Home feed
-    setDisplayStyleUsingElementsByClass("ytd-rich-grid-renderer", homeFeed);
-
-    //Left side bar
-    setDisplayStyleUsingElementById("guide-renderer", leftSidebar);
-    setDisplayStyleUsingElementsByClass("ytd-mini-guide-renderer", leftSidebar);
+    setDisplayStyleUsingElementsByClass("pBKjV", homeFeed);
 
     //Recommendations
-    setDisplayStyleUsingElementById("related", recommendation);
-    setDisplayStyleUsingElementsByClass("ytp-endscreen-content", recommendation);
+    setDisplayStyleUsingElementsByClass("zCpRY", recommendation);
 }
 
 let observer = new MutationObserver((mutations) => {
@@ -63,29 +47,3 @@ observer.observe(document, {
     childList: true,
     subtree: true
 })
-
-chrome.storage.onChanged.addListener(function (changes, namespace) {
-    for (let[key, {
-                oldValue,
-                newValue
-            }
-        ]of Object.entries(changes)) {
-
-        if (key == "block_comments") {
-            blockComments = newValue;
-        }
-
-        if (key == "left_side_bar") {
-            leftSidebar = newValue;
-        }
-
-        if (key == "recommendations") {
-            recommendation = newValue;
-        }
-
-        if (key == "home_feed") {
-            homeFeed = newValue;
-        }
-    }
-    removeYoutubeElements();
-});

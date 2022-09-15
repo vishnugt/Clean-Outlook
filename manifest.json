@@ -1,25 +1,21 @@
 {
-    "name": "Zen YouTube: Distraction free youtube",
+    "name": "Clean outlook",
     "version": "1.0.0",
     "manifest_version": 2,
-    "description": "Removes feed and recommendations from YouTube so that you can have a distraction free focused session",
-    "homepage_url": "https://github.com/vishnugt/Zen-Youtube",
+    "description": "Remove ads from Outlook, and expand the inbox size",
+    "homepage_url": "https://github.com/vishnugt/Clean-Outlook",
     "icons": {
         "16": "icons/icon16.png",
         "48": "icons/icon48.png",
         "128": "icons/icon128.png"
     },
     "permissions": [
-        "https://www.youtube.com/*",
-		"storage"
+        "https://outlook.live.com/*"
     ],
-	"browser_action": {
-		"default_popup": "popup/popup.html"
-	},
     "content_scripts": [{
             "run_at": "document_start",
             "matches": [
-                "https://www.youtube.com/*"
+                "https://outlook.live.com/*"
             ],
             "js": [
                 "inject.js"

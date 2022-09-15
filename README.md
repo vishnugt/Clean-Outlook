@@ -1,12 +1,11 @@
 # Zen-Youtube
 
-Install the extension from chrome store [here](https://chrome.google.com/webstore/detail/zen-youtube-distraction-f/ibcpcdiajmfmkieocebkoiofgdbbecel)
+Install the extension from chrome store [To be updated]
 
 This chrome extension removes your feed, recommendations and comments
 
-![image](https://user-images.githubusercontent.com/7014475/137627846-e09e1220-0e34-4c8b-891e-c3a64ed0e029.png)
-![image](https://user-images.githubusercontent.com/7014475/137627758-11a65065-87f0-407c-a8d6-16c144196788.png)
-![image](https://user-images.githubusercontent.com/7014475/137627764-ac969f62-d94b-4729-ab6d-ad09fcced664.png)
+![image](/Screenshots/2.png)
+![image](/Screenshots/1.png)
 
 
 # Instructions for installing this chrome extension:
